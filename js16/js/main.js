@@ -37,7 +37,7 @@ console.log(truck.engine());
 const car = Object.create(vehicle);
 car.doors = 4;
 car.engine = function () {
-  return "Whooosh!";
+  return "Whooosh";
 };
 
 console.log(car.engine());
@@ -59,9 +59,26 @@ const band = {
   drums: "John Bonham",
 };
 
+delete band.drums;
+console.log(band.hasOwnProperty("drums"));
+
 console.log(Object.keys(band));
 console.log(Object.values(band));
 console.log(Object.keys(vehicle));
 console.log(Object.values(vehicle));
 
+for (let job in band) {
+  console.log(`On ${job}, its ${band[job]}!`);
+}
 
+//destructuring objects
+
+const { vocals, guitar, bass, drums } = band;
+console.log(vocals);
+console.log(guitar);
+
+function sings({ vocals }) {
+  return `${vocals} sings!`;
+}
+
+console.log(sings(band));
