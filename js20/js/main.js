@@ -36,3 +36,17 @@ navbar.innerHTML = "<h1>Hello!</h1> <p>This should align right</p>";
 
 console.log(navbar);
 navbar.style.justifyContent = "space-between";
+
+console.log(evenDivs[0]);
+console.log(evenDivs[0].parentElement);
+console.log(evenDivs[0].parentElement.children);
+console.log(evenDivs[0].parentElement.childNodes);
+console.log(evenDivs[0].parentElement.hasChildNodes());
+console.log(evenDivs[0].parentElement.lastChild);
+console.log(evenDivs[0].parentElement.lastElementChild);
+console.log(evenDivs[0].parentElement.firstElementChild);
+console.log(evenDivs[0].parentElement.firstChild);
+console.log(evenDivs[0].nextSibling);
+console.log(evenDivs[0].nextElementSibling);
+console.log(evenDivs[0].previousElementSibling);
+console.log(evenDivs[0].previousSibling);
