@@ -21,8 +21,8 @@ document.addEventListener("readystatechange", (evt) => {
 });
 
 const initApp = () => {
-  document.getElementById("view1").style.display = "none";
-  const view2 = document.querySelector(".view2");
+  /* document.getElementById("view1").style.display = "none";
+  const view2 = document.querySelector("#view2");
   const div = view2.querySelector("div");
   const h2 = div.querySelector("h2");
   console.log(view2);
@@ -30,7 +30,8 @@ const initApp = () => {
   view2.addEventListener(
     "click",
     (event) => {
-      event.target.style.backgroundColor = "purple";
+      view2.classList.toggle("purple");
+      view2.classList.toggle("darkblue");
     },
     false,
   );
@@ -38,7 +39,8 @@ const initApp = () => {
   div.addEventListener(
     "click",
     (event) => {
-      event.target.style.backgroundColor = "blue";
+      div.classList.toggle("blue");
+      div.classList.toggle("black");
     },
     false,
   );
@@ -46,8 +48,27 @@ const initApp = () => {
   h2.addEventListener(
     "click",
     (event) => {
-      event.target.textContent = "clicked";
+      const myText = event.target.textContent;
+      myText === "My 2nd view"
+        ? (event.target.textContent = "clicked")
+        : (event.target.textContent = "My 2nd view");
     },
     false,
   );
+
+  const nav = document.querySelector("nav");
+
+  nav.addEventListener("mouseover", (event) => {
+    event.target.classList.add("height100");
+  });
+
+  nav.addEventListener("mouseout", (event) => {
+    event.target.classList.remove("height100");
+  }); */
+  const view3 = document.querySelector("#view3");
+  const myForm = view3.querySelector("#myForm");
+  myForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    console.log("submit event");
+  });
 };
