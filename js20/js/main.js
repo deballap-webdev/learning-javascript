@@ -37,6 +37,8 @@ navbar.innerHTML = "<h1>Hello!</h1> <p>This should align right</p>";
 console.log(navbar);
 navbar.style.justifyContent = "space-between";
 
+//Navigating the DOM tree
+
 console.log(evenDivs[0]);
 console.log(evenDivs[0].parentElement);
 console.log(evenDivs[0].parentElement.children);
@@ -50,3 +52,39 @@ console.log(evenDivs[0].nextSibling);
 console.log(evenDivs[0].nextElementSibling);
 console.log(evenDivs[0].previousElementSibling);
 console.log(evenDivs[0].previousSibling);
+
+//Adding to and removing from the DOM
+
+view1.style.display = "none";
+view2.style.display = "flex";
+view2.style.flexdirection = "row";
+view2.style.flexWrap = "wrap";
+
+while (view2.lastChild) {
+  view2.lastChild.remove();
+}
+
+const createDivs = (parent, iter) => {
+  const newDiv = document.createElement("div");
+  newDiv.textContent = iter;
+  newDiv.style.backgroundColor = "#000";
+  newDiv.style.width = "100px";
+  newDiv.style.height = "100px";
+  newDiv.style.margin = "10px";
+  newDiv.style.display = "flex";
+  newDiv.style.justifyContent = "center";
+  newDiv.style.alignItems = "center";
+  parent.append(newDiv);
+};
+
+// createDivs(view2, 10);
+/* 
+for (let i = 1; i <= 12; i++) {
+  createDivs(view2, i);
+} */
+
+let i = 1;
+while (i <= 12) {
+  createDivs(view2, i);
+  i++;
+}
