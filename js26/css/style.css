@@ -1,0 +1,27 @@
+body {
+  min-height: 100vh;
+  font-size: 1.5rem;
+}
+
+section {
+  height: 500px;
+}
+
+.flexCenter {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.phoneForm {
+  width: 100%;
+}
+
+.phoneNum {
+  font: inherit;
+  width: min(400px, 80%);
+  border-radius: 10px;
+  margin-top: 10px;
+  padding: 0.5rem;
+}
