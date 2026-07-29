@@ -1,5 +1,4 @@
-const phoneNum = document.querySelector("#phoneNum");
-phoneNum.addEventListener("input", (event) => {
+document.querySelector("#phoneNum").addEventListener("input", (event) => {
   const regex = /^(\(?\d{3}\)?)?[-. ]?(\d{3})[-. ]?(\d{4})$/g;
   const format = document.querySelector(".phoneFormat");
   const input = document.querySelector("#phoneNum");
@@ -14,11 +13,23 @@ phoneNum.addEventListener("input", (event) => {
   }
 });
 
-const phoneForm = document.querySelector("#phoneForm");
-phoneForm.addEventListener("submit", (event) => {
+document.querySelector("#phoneForm").addEventListener("submit", (event) => {
   event.preventDefault();
   const input = document.querySelector("#phoneNum");
   const regex = /[- .]/g;
   const savedNum = input.value.replaceAll(regex, "");
   console.log(savedNum);
+});
+
+document.querySelector("#textForm").addEventListener("submit", (event) => {
+  event.preventDefault();
+  const regex = / {2,}/g;
+  const textEntry = document.querySelector("#textEntry");
+  const text = textEntry.value;
+  const newText = text.replaceAll(regex, " ").trim();
+  console.log(newText);
+  const encodedText = encodeURI(text);
+  const encodedNewText = encodeURI(newText);
+  console.log(encodedText);
+  console.log(encodedNewText);
 });
